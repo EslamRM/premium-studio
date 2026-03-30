@@ -1,0 +1,77 @@
+.services-section {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.service-card {
+  position: relative;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+  z-index: 1;
+}
+
+.service-icon {
+  color: var(--accent-color);
+  background: rgba(79, 70, 229, 0.1);
+  padding: 1rem;
+  border-radius: 50%;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-card:hover .service-icon {
+  transform: rotate(-10deg) scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+.service-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.service-desc {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Glow Border on Hover */
+.glow-border-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 120%, rgba(79, 70, 229, 0.15) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.service-card:hover .glow-border-effect {
+  opacity: 1;
+}

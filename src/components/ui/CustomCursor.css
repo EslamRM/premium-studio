@@ -1,0 +1,51 @@
+* {
+  cursor: none !important;
+}
+
+/* Restore normal cursor on touch devices — no custom cursor needed */
+@media (hover: none), (pointer: coarse) {
+  * { cursor: auto !important; }
+  .custom-cursor-layer { display: none !important; }
+}
+
+.custom-cursor-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
+  pointer-events: none;
+  mix-blend-mode: difference;
+}
+
+.cursor-dot {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+  border-radius: 50%;
+  z-index: 10000;
+}
+
+.cursor-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  z-index: 9998;
+}
+
+.cursor-label {
+  position: absolute;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  white-space: nowrap;
+  pointer-events: none;
+}
